@@ -35,4 +35,11 @@ Problem Solving
   - pseudo code
   - solve easy parts first, come back to difficult parts
 
-5.
+5. Look back and refactor
+  - can you check result?
+  - can you derive result differently?
+  - can you understand it at a glance?
+  - can you use result or method for another problem?
+  - can you improve perforamnce?
+  - can you think of other ways to refactor?
+  - have other people solved this problem?
