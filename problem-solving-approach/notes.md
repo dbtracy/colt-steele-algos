@@ -27,3 +27,9 @@ Problem Solving
   - explore examples with invalid inputs
 
 3. Break it down (your approach)
+  - explicity write out steps you need to take
+  - forces you to think about code before you write it
+  - helps you catch lingering questions
+
+4. Solve/simplify (code!)
+  -
