@@ -11,5 +11,6 @@ Problem Solving
   - can i restate the problem in my own words?
   - what are the inputs?
   - what are the outputs?
-  - can outputs be determined from inputs?
+  - can outputs be determined from inputs? do i have enough info?
   - do you have enough info to solve problem?
+  - how should i label important pieces?
