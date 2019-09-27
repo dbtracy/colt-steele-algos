@@ -32,4 +32,7 @@ Problem Solving
   - helps you catch lingering questions
 
 4. Solve/simplify (code!)
-  -
+  - pseudo code
+  - solve easy parts first, come back to difficult parts
+
+5.
