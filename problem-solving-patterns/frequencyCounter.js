@@ -11,12 +11,9 @@ const frequencyCounter = function (arr1, arr2) {
 
   for (num of arr2) {
     if (squares[num]) {
-      squares[num]--
-      if (squares[num] === 0) {
-        delete squares[num]
-      }
+      squares[num]++
     } else {
-      return false
+      squares[squaredNum] = 1
     }
   }
 
