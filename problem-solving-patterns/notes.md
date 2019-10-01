@@ -15,3 +15,8 @@ Some patterns
   - create a window which can be either an array or number from one position to another
   - depending on a certain condition, the window either increases or closes (and a new window is created)
   - very useful for keeping track of a subset of data in an array/string etc
+
+4. Divide and conquer
+
+  - dividing a data set into smaller chunks and then repeating a process w/ a subset of data
+  - can tremendously decrease time complexity
