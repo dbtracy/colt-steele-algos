@@ -22,4 +22,5 @@ function areThereDuplicates() {
 }
 
 // Approach:
-// use ...args operator?
+// use arguments operator
+//
