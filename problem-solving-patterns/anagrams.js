@@ -1,4 +1,4 @@
-const anagrams = function (str1, str2) {
+function validAnagram(str1, str2) {
   let str1chars = {}
   let str2chars = {}
 
