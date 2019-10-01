@@ -1,17 +1,18 @@
 function countUniqueValues(array) {
   let uniques = []
-  let index = 0
+  let pointer1 = 0
+  let pointer2
 
-  while (index < array.length - 2) {
-    let point2 = index + 1
-
-    if (array[point2] === array[index]) {
-      point2++
+  while (pointer1 < array.length) {
+    pointer2 = pointer1 + 1
+    if (array[pointer1] === array[pointer2]) {
+      array.splice(pointer2, 1)
     } else {
-      uniques.push(array[index])
-      index++
+      uniques.push(array[pointer1])
+      pointer1++
     }
   }
+  return uniques
 }
 
 // approach
@@ -21,3 +22,5 @@ function countUniqueValues(array) {
 // if i+1 is different, i = i+1
 // if i+1 is the same, increment that counter till you find something different, then set i to that
 // return array
+
+console.log(countUniqueValues([1, 1, 1, 1, 1, 1, 2]))
