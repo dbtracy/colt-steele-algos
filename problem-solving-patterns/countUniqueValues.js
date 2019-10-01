@@ -1,5 +1,5 @@
 function countUniqueValues(array) {
-  let uniques = []
+  // let uniques = []
   let pointer1 = 0
   let pointer2
 
@@ -8,11 +8,11 @@ function countUniqueValues(array) {
     if (array[pointer1] === array[pointer2]) {
       array.splice(pointer2, 1)
     } else {
-      uniques.push(array[pointer1])
+      // uniques.push(array[pointer1])
       pointer1++
     }
   }
-  return uniques
+  return array.length
 }
 
 // approach
