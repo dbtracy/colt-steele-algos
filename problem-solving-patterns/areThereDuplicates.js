@@ -20,3 +20,6 @@
 function areThereDuplicates() {
 
 }
+
+// Approach:
+// use ...args operator?
