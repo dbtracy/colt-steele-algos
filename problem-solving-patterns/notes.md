@@ -20,3 +20,4 @@ Some patterns
 
   - dividing a data set into smaller chunks and then repeating a process w/ a subset of data
   - can tremendously decrease time complexity
+  - example: binary search!
