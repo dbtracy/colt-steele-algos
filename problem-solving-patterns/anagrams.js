@@ -18,7 +18,22 @@ function validAnagram(str1, str2) {
     }
   }
 
-  for (lett in str1chars) {
-
+  for (key in str1chars) {
+    if (!(key in str2chars) || str1chars[key] !== str2chars[key]) {
+      return false
+    }
   }
+
+  for (key in str2chars) {
+    if (!(key in str1chars) || str2chars[key] !== str1chars[key]) {
+      return false
+    }
+  }
+
+  return true
 }
+
+console.log(validAnagram('aba', 'bbca'))
+console.log(validAnagram('aba', 'baa'))
+console.log(validAnagram('', ''))
+console.log(validAnagram('', 'a'))
