@@ -18,3 +18,12 @@
 function isSubsequence(str1, str2) {
 
 }
+
+// approach:
+// loop through first and second strings
+// keep track of the letter you're on in the first string
+  // once you find that letter in the second string, store it, then move
+  // on to the next letter in the first string and go from where you
+  // left off in the second string
+// if you construct the full first string, return true
+// if you get to the end, return false
