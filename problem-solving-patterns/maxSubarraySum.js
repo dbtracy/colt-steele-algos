@@ -22,6 +22,23 @@
 
 function maxSubarraySum(array, sublen) {
 
+  if (array.length < sublen) return null
+
+  let max = -Infinity
+  let left = 0
+  let right = left + sublen - 1
+  let sum = 0
+  for (let i = 0; i <= right; i++) {
+    sum += array[i]
+  }
+  while (right < array.length) {
+    max = Math.max(max, sum)
+    sum -= array[left]
+    left++
+    right++
+    sum += array[right]
+  }
+  return max
 }
 
 // approach:
@@ -32,3 +49,9 @@ function maxSubarraySum(array, sublen) {
 // max = Math.max(max, sum)
 // sum -= left, left++
 // right++, sum += right
+
+console.log(maxSubarraySum([100, 200, 300, 400], 2))
+console.log(maxSubarraySum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4))
+console.log(maxSubarraySum([-3, 4, 0, -2, 6, -1], 2))
+console.log(maxSubarraySum([3, -2, 7, -4, 1, -1, 4, -2, 1], 2))
+console.log(maxSubarraySum([2, 3], 3))
