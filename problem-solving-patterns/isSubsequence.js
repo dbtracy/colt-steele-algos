@@ -25,7 +25,7 @@ function isSubsequence(str1, str2) {
   while (index2 < str2.length) {
     if (str2[index2] === str1[index1]) {
       index1++
-      if (index1 = str1.length) return true
+      if (index1 === str1.length) return true
     }
     index2++
   }
