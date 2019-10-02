@@ -20,9 +20,15 @@
 // Time: O(n)
 // Space: O(1)
 
-function maxSubarraySum(array, sum) {
+function maxSubarraySum(array, sublen) {
 
 }
 
 // approach:
-//
+// initialize max to -Infinity
+// initialize left to 0 and right to left + sublen - 1
+// initialize sum to sum of elements from left to right
+// while sublen < array length
+// max = Math.max(max, sum)
+// sum -= left, left++
+// right++, sum += right
