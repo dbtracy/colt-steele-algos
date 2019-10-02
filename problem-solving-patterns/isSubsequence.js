@@ -17,7 +17,25 @@
 
 function isSubsequence(str1, str2) {
 
+  if (str1.length > str2.length) return false
+
+  let index1 = 0
+  let index2 = 0
+
+  while (index2 < str2.length) {
+    if (str2[index2] === str1[index1]) {
+      index1++
+      if (index1 = str1.length) return true
+    }
+    index2++
+  }
+
+  return false
 }
+console.log(isSubsequence('hello', 'hello world'))
+console.log(isSubsequence('sing', 'sting'))
+console.log(isSubsequence('abc', 'abracadabra'))
+console.log(isSubsequence('abc', 'acb'))
 
 // approach:
 // loop through first and second strings
