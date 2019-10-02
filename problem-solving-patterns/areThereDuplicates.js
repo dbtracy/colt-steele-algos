@@ -18,9 +18,21 @@
 // Space - O(1)
 
 function areThereDuplicates() {
+  let values = {}
 
+  for (arg of arguments) {
+    values[arg] ? values[arg] += 1 : values[arg] = 1
+  }
+
+  for (value in values) {
+    if (values[value] > 1) return true
+  }
+
+  return false
 }
 
 // Approach:
 // use arguments operator
 //
+
+console.log(areThereDuplicates(1, 2, 3, 3))
