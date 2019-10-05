@@ -16,7 +16,7 @@ function validAnagram(str1, str2) {
   return true
 }
 
-console.log(validAnagram('aba', 'bbca'))
-console.log(validAnagram('aba', 'baa'))
-console.log(validAnagram('', ''))
-console.log(validAnagram('', 'a'))
+// console.log(validAnagram('aba', 'bbca'))
+// console.log(validAnagram('aba', 'baa'))
+// console.log(validAnagram('', ''))
+// console.log(validAnagram('', 'a'))
