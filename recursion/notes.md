@@ -22,3 +22,9 @@ Two essential parts of recursive function
 
 -base case
 -different input
+
+Common Mistakes:
+
+-no base case
+-not changing input
+-not returning something in the base case
