@@ -28,3 +28,9 @@ Common Mistakes:
 -no base case
 -not changing input
 -not returning something in the base case
+
+
+Pure recursion (no helper):
+-for arrays, use methods like slice, spread operator, concat to you don't mutate the arrays
+-strings are immutable so you'll need methods like slice, substr, or substring to make copies
+-to make copies of objects, use Object.assign, or spread operator
