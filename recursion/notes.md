@@ -13,3 +13,12 @@ The call stack
 -stack DS
 -FIFO
 -functions are added to this structure
+
+Base Case
+
+-most important concept
+
+Two essential parts of recursive function
+
+-base case
+-different input
