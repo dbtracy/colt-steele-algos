@@ -23,7 +23,7 @@
 
 function minSubArrayLen(array, int) {
   let left = right = 0
-  let sum = array[left] + array[right]
+  let sum = left === right ? array[left] : array[left] + array[right]
   let len
   while (right < array.length) {
     if (sum >= int) {
@@ -36,6 +36,7 @@ function minSubArrayLen(array, int) {
       right++
       sum += array[right]
     }
+    // console.log(len)
   }
   if (len) return len
   else return 0
