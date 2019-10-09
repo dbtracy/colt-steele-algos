@@ -7,3 +7,9 @@ Recursion is everywhere!
 -DOM traversal (div inside of div inside of div)
 -we will see it with more complex data structures
 -sometimes cleaner alternative to iteration
+
+The call stack
+
+-stack DS
+-FIFO
+-functions are added to this structure
