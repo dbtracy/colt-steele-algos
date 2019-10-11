@@ -40,12 +40,23 @@ class SinglyLinkedList {
     }
     return current
   }
+  shift() {
+    if (!this.head) return undefined
+    let oldHead = this.head
+    this.head = oldHead.next
+    this.length--
+    if (this.length === 0) {
+      this.head = null
+      this.tail = null
+    }
+    return oldHead
+  }
 }
 
 let list = new SinglyLinkedList()
 list.push('hi')
 list.push('there')
-list.push('you')
-list.push('bad')
-list.push('boy')
-console.log(list.pop())
+console.log(list.shift())
+console.log(list)
+console.log(list.shift())
+console.log(list)
