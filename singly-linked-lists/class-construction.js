@@ -63,6 +63,16 @@ class SinglyLinkedList {
     this.length++
     return this
   }
+  get(idx) {
+    if (idx < 0 || idx >= this.length) return null
+    let count = 0
+    let curr = this.head
+    while (count < idx) {
+      curr = curr.next
+      count++
+    }
+    return curr
+  }
 }
 
 let list = new SinglyLinkedList()
@@ -75,3 +85,4 @@ console.log(list)
 console.log(list.unshift('you'))
 console.log(list.unshift('big'))
 console.log(list.unshift('butt'))
+console.log(list.get(2))
