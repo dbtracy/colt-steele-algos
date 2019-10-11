@@ -51,6 +51,18 @@ class SinglyLinkedList {
     }
     return oldHead
   }
+  unshift(val) {
+    let newbie = new Node(val)
+    if (!this.head) {
+      this.head = newbie
+      this.tail = newbie
+    } else {
+      newbie.next = this.head
+      this.head = newbie
+    }
+    this.length++
+    return this
+  }
 }
 
 let list = new SinglyLinkedList()
@@ -60,3 +72,6 @@ console.log(list.shift())
 console.log(list)
 console.log(list.shift())
 console.log(list)
+console.log(list.unshift('you'))
+console.log(list.unshift('big'))
+console.log(list.unshift('butt'))
