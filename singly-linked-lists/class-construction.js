@@ -73,6 +73,12 @@ class SinglyLinkedList {
     }
     return curr
   }
+  set(idx, val) {
+    let curr = this.get(idx)
+    if (!curr) return false
+    curr.val = val
+    return true
+  }
 }
 
 let list = new SinglyLinkedList()
@@ -82,7 +88,8 @@ console.log(list.shift())
 console.log(list)
 console.log(list.shift())
 console.log(list)
-console.log(list.unshift('you'))
-console.log(list.unshift('big'))
 console.log(list.unshift('butt'))
-console.log(list.get(2))
+console.log(list.unshift('big'))
+console.log(list.unshift('you'))
+console.log('GET:', list.get(2))
+console.log('SET:', list.set(1, 'little'), list)
