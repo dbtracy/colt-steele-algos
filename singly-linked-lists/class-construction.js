@@ -89,6 +89,16 @@ class SinglyLinkedList {
     prev.next = newbie
     return true
   }
+  remove(idx) {
+    if (idx < 0 || idx >= this.length) return undefined
+    if (idx === 0) this.shift()
+    if (idx === this.length) this.pop()
+    let prev = this.get(idx - 1)
+    let toRemove = prev.next
+    prev.next = toRemove.next
+    this.length--
+    return toRemove
+  }
 }
 
 let list = new SinglyLinkedList()
