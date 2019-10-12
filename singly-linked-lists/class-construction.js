@@ -109,11 +109,20 @@ class SinglyLinkedList {
     console.log(arr)
   }
   reverse() {
+    // capture first node
     let node = this.head
+    // superfically/hardcode change head and tail
     this.head = this.tail
     this.tail = node
+    // establish crawler variables
     let next = null
     let prev = null
+    // at each node starting with the original head,
+    // capture the node's next in a variable, change
+    // the next value to what was previously visited
+    // (null for the first one), and then move the
+    // prev variable to the current node and the
+    // current node to next
     for (let i = 0; i < this.length; i++) {
       next = node.next
       node.next = prev
