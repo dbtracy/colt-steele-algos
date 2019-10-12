@@ -99,6 +99,29 @@ class SinglyLinkedList {
     this.length--
     return toRemove
   }
+  print() {
+    let arr = []
+    let curr = this.head
+    while (curr) {
+      arr.push(curr.val)
+      curr = curr.next
+    }
+    console.log(arr)
+  }
+  reverse() {
+    let node = this.head
+    this.head = this.tail
+    this.tail = node
+    let next = null
+    let prev = null
+    for (let i = 0; i < this.length; i++) {
+      next = node.next
+      node.next = prev
+      prev = node
+      node = next
+    }
+    return this
+  }
 }
 
 let list = new SinglyLinkedList()
@@ -113,3 +136,4 @@ console.log(list.unshift('big'))
 console.log(list.unshift('you'))
 console.log('GET:', list.get(2))
 console.log('SET:', list.set(1, 'little'), list)
+list.print()
