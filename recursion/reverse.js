@@ -3,10 +3,14 @@
 
 function reverse(string) {
   let result = ''
-  if (string.length === 1) {
-    result += string[0]
+  if (string.length === 0) {
+    return result
   }
+  return reverse(string.slice(1)) + result
 }
 
 // reverse('awesome') // 'emosewa'
 // reverse('rithmschool') // 'loohcsmhtir'
+
+console.log(reverse('awesome'))
+console.log(reverse('rithmschool'))

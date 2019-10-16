@@ -132,17 +132,3 @@ class SinglyLinkedList {
     return this
   }
 }
-
-let list = new SinglyLinkedList()
-list.push('hi')
-list.push('there')
-console.log(list.shift())
-console.log(list)
-console.log(list.shift())
-console.log(list)
-console.log(list.unshift('butt'))
-console.log(list.unshift('big'))
-console.log(list.unshift('you'))
-console.log('GET:', list.get(2))
-console.log('SET:', list.set(1, 'little'), list)
-list.print()
