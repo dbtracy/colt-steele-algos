@@ -2,7 +2,16 @@
 // which may contain nested objects
 
 function nestedEvenSum(object) {
-
+  let sum = 0
+  const values = Object.values(object)
+  values.forEach(value => {
+    if (typeof value === "number") {
+      if (value % 2 === 0) sum += value
+    } else if (typeof value === "object") {
+      sum += nestedEvenSum(value)
+    }
+  })
+  return sum
 }
 
 var obj1 = {
@@ -25,5 +34,5 @@ var obj2 = {
   e: { e: { e: 2 }, ee: 'car' }
 };
 
-nestedEvenSum(obj1); // 6
-nestedEvenSum(obj2); // 10
+console.log(nestedEvenSum(obj1)); // 6
+console.log(nestedEvenSum(obj2)); // 10
