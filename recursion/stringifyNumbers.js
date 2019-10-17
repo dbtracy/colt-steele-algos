@@ -8,7 +8,7 @@ function stringifyNumbers(obj) {
   keys.forEach(key => {
     if (typeof obj[key] === "number") {
       newObj[key] = obj[key].toString()
-    } else if (typeof obj[key] === "object") {
+    } else if (typeof obj[key] === "object" && !Array.isArray(obj[key])) {
       newObj[key] = stringifyNumbers(obj[key])
     } else {
       newObj[key] = obj[key]
