@@ -8,3 +8,11 @@ Linear Search
     -includes
     -find
 
+-Linear Search Big O: O(n)
+
+Binary Search
+
+-much faster
+-rather than eliminating one element at a time,
+you eliminate HALF at a time
+-Divide and Conquer!
