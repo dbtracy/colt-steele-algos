@@ -2,7 +2,18 @@
 // object that have a typeof string
 
 function collectStrings(obj) {
+  let result = []
+  let keys = Object.keys(obj)
 
+  keys.forEach(key => {
+    if (typeof obj[key] === "string") {
+      result.push(obj[key])
+    } else if (typeof obj[key] === "object") {
+      result = result.concat(collectStrings(obj[key]))
+    }
+  })
+
+  return result
 }
 
 const obj = {
@@ -21,4 +32,4 @@ const obj = {
   }
 }
 
-collectStrings(obj) // ["foo", "bar", "baz"])
+console.log(collectStrings(obj)) // ["foo", "bar", "baz"])
