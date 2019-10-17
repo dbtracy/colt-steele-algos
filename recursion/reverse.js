@@ -5,8 +5,10 @@ function reverse(string) {
   let result = ''
   if (string.length === 0) {
     return result
+  } else {
+    result = string[string.length - 1] + reverse(string.slice(0, string.length - 1))
   }
-  return reverse(string.slice(1)) + result
+  return result
 }
 
 // reverse('awesome') // 'emosewa'
@@ -14,3 +16,4 @@ function reverse(string) {
 
 console.log(reverse('awesome'))
 console.log(reverse('rithmschool'))
+//
