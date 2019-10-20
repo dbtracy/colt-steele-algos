@@ -11,3 +11,5 @@ function naiveStringSearch(long, short) {
 }
 
 console.log(naiveStringSearch('wowomgzomg', 'omg'))
+console.log(naiveStringSearch('wowomgzomg', 'z'))
+console.log(naiveStringSearch('wowomgzomg', 'wo'))
