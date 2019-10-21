@@ -20,6 +20,8 @@ function bubbleSort(arr) {
   return arr
 }
 
+// TIME COMPLEXITY: O(n^2) for unoptimized, O(n) for optimized on a nearly sorted array
+
 console.log(bubbleSort([4, 5, 1, 10, 3, 2, 6]))
 console.log(bubbleSort([8, 9, 10, 1, 2, 3, 5]))
 console.log(bubbleSort([5, 4, 3, 2, 1]))
