@@ -19,3 +19,13 @@ Objectives:
   -selection sort
   -insertion sort
 -understand why it's important to learn these simple sorting algos
+
+Telling Javascript how to sort
+-built-in sort method accepts optional comparator function
+-use this comparator function to tell JS how to sort
+-comparator looks at pairs of elements (a and b), determines sort order
+  based on return value
+  -if it returns a negative number, a should come before b
+  -if positive, a comes after b
+  -if 0, a and b are the same
+
