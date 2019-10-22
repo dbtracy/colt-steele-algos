@@ -29,3 +29,9 @@ Telling Javascript how to sort
   -if positive, a comes after b
   -if 0, a and b are the same
 
+
+THE FASTER SORT METHODS
+
+-improve time from O(n^2) to O(n log n)
+-tradeoff between efficiency and simplicity
+-generally take longer to understand
