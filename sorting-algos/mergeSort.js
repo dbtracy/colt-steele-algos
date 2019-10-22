@@ -24,5 +24,9 @@ function mergeSort(arr) {
   return mergingArrays(mergeSort(front), mergeSort(back))
 }
 
+// TIME COMPLEXITY: O(n log n)
+// O(log n) decompositions (splits), O(n) comparisons per decomposition
+// SPACE COMPLEXITY: O(n)
+
 console.log(mergeSort([4, 3, 6, 7, 88, 3, 452, 12, 0]))
 console.log(mergeSort([5, 4, 3, 2, 1]))
