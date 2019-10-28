@@ -18,8 +18,8 @@ class DoublyLinkedList {
       this.head = newbie
       this.tail = newbie
     } else {
-      newbie.prev = this.tail
       this.tail.next = newbie
+      newbie.prev = this.tail
       this.tail = newbie
     }
     this.length++
@@ -28,7 +28,7 @@ class DoublyLinkedList {
   pop() {
     if (!this.head) return undefined
     let popped = this.tail
-    else if (this.length === 1) {
+    if (this.length === 1) {
       this.head = null
       this.tail = null
     } else {
@@ -42,7 +42,7 @@ class DoublyLinkedList {
   shift() {
     if (!this.head) return undefined
     let shifted = this.head
-    else if (this.length === 1) {
+    if (this.length === 1) {
       this.head = null
       this.tail = null
     } else {
@@ -66,4 +66,66 @@ class DoublyLinkedList {
     length++
     return this
   }
+  get(idx) {
+    if (idx < 0 || idx > this.length - 1) return null
+    let curr
+    if (idx > Math.floor(this.length / 2)) {
+      let count = this.length - 1
+      curr = this.tail
+      while (count > idx) {
+        curr = curr.prev
+        count--
+      }
+    } else {
+      let count = 0
+      curr = this.head
+      while (count < idx) {
+        curr = curr.next
+        count++
+      }
+    }
+    return curr
+  }
+  set(idx, val) {
+    let curr = this.get(idx)
+    if (curr !== null) {
+      curr.val = val
+      return true
+    }
+    return false
+  }
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) return false
+    if (idx === 0) return !!this.unshift(val)
+    if (idx === this.length) return !!this.push(val)
+
+    let newbie = new Node(val)
+    let curr = this.get(idx)
+
+    newbie.next = curr
+    newbie.prev = curr.prev
+    curr.prev.next = newbie
+    curr.prev = newbie
+    this.length++
+    return true
+  }
 }
+
+let list = new DoublyLinkedList()
+list.push(1)
+list.push(2)
+list.push(3)
+// list.push(4)
+// list.push(5)
+// list.push(6)
+// list.push(7)
+// list.push(8)
+// list.push(9)
+// list.push(10)
+// list.push(11)
+// list.push(12)
+// list.push(13)
+// list.push(14)
+// console.log(list)
+list.insert(1, 'YO')
+console.log(list)
