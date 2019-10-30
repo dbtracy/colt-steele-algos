@@ -7,3 +7,10 @@ More than one way to implement a stack
   - pop
   - shift
   - unshift
+
+TIME COMPLEXITY
+
+- insertion: O(1)
+- removal: O(1)
+- searching: O(n)
+- access: O(n)
