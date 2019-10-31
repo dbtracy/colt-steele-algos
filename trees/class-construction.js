@@ -19,6 +19,7 @@ class BinarySearchTree {
     } else {
       let curr = this.root
       while (curr) {
+        if (val === curr.val) return undefined
         if (val < curr.val) {
           if (curr.left === null) {
             curr.left = newbie
@@ -34,8 +35,6 @@ class BinarySearchTree {
         }
       }
     }
-    console.log(this)
-    return this
   }
 }
 
