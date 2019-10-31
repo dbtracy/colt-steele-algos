@@ -21,3 +21,9 @@ Examples
 - computer folder model: folder, folder within that, files within them
 - JSON!
 
+BINARY TREE
+- a node can have at most two children
+
+BINARY SEARCH TREE (BST)
+- a binary tree sorted in a particular way
+- everything to the "left" is lesser than, everything to the "right" is greater than
