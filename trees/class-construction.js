@@ -85,6 +85,30 @@ class BinarySearchTree {
     traverse(this.root)
     return result
   }
+  dfsPostOrderRecursive() {
+    let result = []
+
+    const traverse = node => {
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+      result.push(node.val)
+    }
+
+    traverse(this.root)
+    return result
+  }
+  dfsInOrderRecursive() {
+    let result = []
+
+    const traverse = node => {
+      if (node.left) traverse(node.left)
+      result.push(node.val)
+      if (node.right) traverse(node.right)
+    }
+
+    traverse(this.root)
+    return result
+  }
 }
 
 const bst = new BinarySearchTree()
@@ -97,5 +121,7 @@ bst.insert(17)
 bst.insert(9)
 bst.insert(3)
 
-console.log(bst.dfsPreOrderRecursive())
-console.log(bst.dfsPreOrderIterative())
+console.log('PRE-ORDER:', bst.dfsPreOrderRecursive())
+console.log('POST-ORDER:', bst.dfsPostOrderRecursive())
+console.log('POST-ORDER:', bst.dfsInOrderRecursive())
+// console.log(bst.dfsPreOrderIterative())
