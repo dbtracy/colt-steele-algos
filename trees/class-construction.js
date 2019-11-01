@@ -45,6 +45,20 @@ class BinarySearchTree {
     }
     return false
   }
+  breadthFirstSearch() {
+    let result = []
+    let queue = []
+
+    queue.push(this.root)
+    while (queue.length) {
+      if (queue[0].left) queue.push(queue[0].left)
+      if (queue[0].right) queue.push(queue[0].right)
+      let shifted = queue.shift()
+      result.push(shifted.val)
+    }
+
+    return result
+  }
 }
 
 const bst = new BinarySearchTree()
@@ -53,6 +67,8 @@ const bst = new BinarySearchTree()
 bst.insert(10)
 bst.insert(5)
 bst.insert(15)
+bst.insert(17)
+bst.insert(9)
+bst.insert(3)
 
-console.log(bst.find(15))
-console.log(bst.find(12))
+console.log(bst.breadthFirstSearch())
