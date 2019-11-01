@@ -2,8 +2,8 @@ class Graph {
   constructor() {
     this.adjacencyList = {}
   }
-  addVertex(name) {
-    if (!this.adjacencyList[name]) this.adjacencyList[name] = []
+  addVertex(vertex) {
+    if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = []
   }
   addEdge(v1, v2) {
     this.adjacencyList[v1].push(v2)
@@ -15,18 +15,19 @@ class Graph {
     this.adjacencyList[v1] = v1List.filter(el => el !== v2)
     this.adjacencyList[v2] = v2List.filter(el => el !== v1)
   }
+  remove(vertex) {
+    let edges = this.adjacencyList[vertex]
+    edges.forEach(connection => this.removeEdge(vertex, connection))
+    delete this.adjacencyList[vertex]
+  }
 }
 
 g = new Graph()
 g.addVertex('Tokyo')
-g.addVertex('San Francisco')
+g.addVertex('Minneapolis')
 g.addVertex('Dallas')
+g.addEdge('Tokyo', 'Minneapolis')
+g.addEdge('Dallas', 'Minneapolis')
 console.log(g)
-g.addEdge('Tokyo', 'San Francisco')
-console.log(g)
-g.addEdge('Dallas', 'San Francisco')
-console.log(g)
-g.removeEdge('Dallas', 'San Francisco')
-console.log(g)
-g.removeEdge('Tokyo', 'San Francisco')
+g.remove('Tokyo')
 console.log(g)
