@@ -56,7 +56,33 @@ class BinarySearchTree {
       let shifted = queue.shift()
       result.push(shifted.val)
     }
+    return result
+  }
+  dfsPreOrderIterative() {
+    let result = []
+    let queue = []
+    let node
 
+    queue.push(this.root)
+
+    while (queue.length) {
+      node = queue.shift()
+      result.push(node.val)
+      if (node.right) queue.unshift(node.right)
+      if (node.left) queue.unshift(node.left)
+    }
+    return result
+  }
+  dfsPreOrderRecursive() {
+    let result = []
+
+    const traverse = node => {
+      result.push(node.val)
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+    }
+
+    traverse(this.root)
     return result
   }
 }
@@ -71,4 +97,5 @@ bst.insert(17)
 bst.insert(9)
 bst.insert(3)
 
-console.log(bst.breadthFirstSearch())
+console.log(bst.dfsPreOrderRecursive())
+console.log(bst.dfsPreOrderIterative())
