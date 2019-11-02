@@ -56,3 +56,9 @@ Examples:
   - GPS nav
   - solving mazes
   - AI
+
+DEPTH FIRST TRAVERSAL
+- go down a single child's path first
+
+BREADTH FIRST TRAVERSAL
+- explore all children before moving on
