@@ -20,14 +20,43 @@ class Graph {
     edges.forEach(connection => this.removeEdge(vertex, connection))
     delete this.adjacencyList[vertex]
   }
+  depthFirstSearchRecursive(vertex) {
+    if (!vertex) return
+
+    let result = []
+    let visited = {}
+
+    const dfs = (v) => {
+      if (!this.adjacencyList[v]) return
+      visited[v] = true
+      result.push(v)
+      for (let i = 0; i < this.adjacencyList[v].length; i++) {
+        if (!visited[this.adjacencyList[v][i]]) {
+          dfs(this.adjacencyList[v][i])
+        }
+      }
+    }
+
+    dfs(vertex)
+    return result
+  }
 }
 
 g = new Graph()
-g.addVertex('Tokyo')
-g.addVertex('Minneapolis')
-g.addVertex('Dallas')
-g.addEdge('Tokyo', 'Minneapolis')
-g.addEdge('Dallas', 'Minneapolis')
-console.log(g)
-g.remove('Tokyo')
-console.log(g)
+g.addVertex('A')
+g.addVertex('B')
+g.addVertex('C')
+g.addVertex('D')
+g.addVertex('E')
+g.addVertex('F')
+
+g.addEdge('A', 'B')
+g.addEdge('A', 'C')
+g.addEdge('B', 'D')
+g.addEdge('C', 'E')
+g.addEdge('D', 'E')
+g.addEdge('D', 'F')
+g.addEdge('E', 'F')
+// console.log(g)
+
+console.log('DFS:', g.depthFirstSearchRecursive('Q'))
