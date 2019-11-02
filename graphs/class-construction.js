@@ -40,6 +40,26 @@ class Graph {
     dfs(vertex)
     return result
   }
+  depthFirstSearchIterative(vertex) {
+    if (!vertex) return
+
+    let stack = [vertex]
+    let result = []
+    let visited = {}
+    let curr
+
+    while (stack.length) {
+      curr = stack.pop()
+      if (!visited[curr]) {
+        visited[curr] = true
+        result.push(curr)
+        this.adjacencyList[curr].forEach(neighbor => {
+          return stack.push(neighbor)
+        })
+      }
+    }
+    return result
+  }
 }
 
 g = new Graph()
@@ -59,4 +79,5 @@ g.addEdge('D', 'F')
 g.addEdge('E', 'F')
 // console.log(g)
 
-console.log('DFS:', g.depthFirstSearchRecursive('Q'))
+console.log('DFS:', g.depthFirstSearchIterative('A'))
+console.log('DFS:', g.depthFirstSearchIterative('B'))
