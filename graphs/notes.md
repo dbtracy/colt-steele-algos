@@ -45,3 +45,14 @@ Pros/Cons of Adjacency List vs Matrix
 We will use Adjacency List!
 - takes up less space
 - most data in real world lends itself to sparses and/or larger graphs
+
+GRAPH TRAVERSAL
+
+Examples:
+- P2P networking
+- web crawlers
+- find "closest" matches/reccomendations
+- shortest path problems
+  - GPS nav
+  - solving mazes
+  - AI
