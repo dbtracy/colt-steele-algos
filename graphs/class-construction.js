@@ -60,6 +60,25 @@ class Graph {
     }
     return result
   }
+  breadthFirstSearch(start) {
+    let queue = [start]
+    let result = []
+    let visited = {}
+    let curr
+
+    while (queue.length) {
+      curr = queue.shift()
+      if (!visited[curr]) {
+        visited[curr] = true
+        result.push(curr)
+        this.adjacencyList[curr].forEach(neighbor => {
+          return queue.push(neighbor)
+        })
+      }
+    }
+
+    return result
+  }
 }
 
 g = new Graph()
@@ -79,5 +98,7 @@ g.addEdge('D', 'F')
 g.addEdge('E', 'F')
 console.log(g)
 
-console.log('DFS:', g.depthFirstSearchIterative('A'))
-console.log('DFS:', g.depthFirstSearchIterative('B'))
+// console.log('DFS:', g.depthFirstSearchIterative('A'))
+// console.log('DFS:', g.depthFirstSearchRecursive('A'))
+// console.log('DFS:', g.depthFirstSearchIterative('B'))
+console.log('BFS:', g.breadthFirstSearch('A'))
