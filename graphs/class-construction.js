@@ -77,7 +77,7 @@ g.addEdge('C', 'E')
 g.addEdge('D', 'E')
 g.addEdge('D', 'F')
 g.addEdge('E', 'F')
-// console.log(g)
+console.log(g)
 
 console.log('DFS:', g.depthFirstSearchIterative('A'))
 console.log('DFS:', g.depthFirstSearchIterative('B'))
