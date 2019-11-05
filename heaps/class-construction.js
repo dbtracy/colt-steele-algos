@@ -19,6 +19,11 @@ class MaxBinaryHeap {
     }
   }
   extract() {
+    // EDGE CASE
+    if (this.values.length === 1) {
+      return this.values.pop()
+    }
+    // MAIN CODE
     let start = this.values[0]
     this.values[0] = this.values[this.values.length - 1]
     this.values[this.values.length - 1] = start
@@ -51,30 +56,29 @@ class MaxBinaryHeap {
 let heap = new MaxBinaryHeap()
 heap.insert(10)
 console.log(heap.values)
-heap.insert(20)
-console.log(heap.values)
-heap.insert(3)
-console.log(heap.values)
-heap.insert(8)
-console.log(heap.values)
-heap.insert(14)
-console.log(heap.values)
-heap.insert(65)
-console.log(heap.values)
-heap.insert(40)
-console.log(heap.values)
-heap.insert(38)
-console.log(heap.values)
-heap.insert(12)
-console.log(heap.values)
-heap.insert(12)
-console.log(heap.values)
-heap.insert(19)
-console.log(heap.values)
-heap.insert(21)
-console.log(heap.values)
-heap.insert(15)
-console.log(heap.values)
-
+// heap.insert(20)
+// console.log(heap.values)
+// heap.insert(3)
+// console.log(heap.values)
+// heap.insert(8)
+// console.log(heap.values)
+// heap.insert(14)
+// console.log(heap.values)
+// heap.insert(65)
+// console.log(heap.values)
+// heap.insert(40)
+// console.log(heap.values)
+// heap.insert(38)
+// console.log(heap.values)
+// heap.insert(12)
+// console.log(heap.values)
+// heap.insert(12)
+// console.log(heap.values)
+// heap.insert(19)
+// console.log(heap.values)
+// heap.insert(21)
+// console.log(heap.values)
+// heap.insert(15)
+// console.log(heap.values)
 console.log(heap.extract())
 console.log(heap.values)
