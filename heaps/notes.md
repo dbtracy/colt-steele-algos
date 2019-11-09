@@ -25,3 +25,7 @@ Storing a binary heap
     - right child is at index 2n + 2
 - Math for parents:
   - for any index n, parent is at Math.floor((n-1)/2)
+
+Priority Queue
+- DS where each element has priority
+- elements w/ higher priorities are retrieved before those w/ lower
