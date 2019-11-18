@@ -1,3 +1,10 @@
+class Node {
+  constructor(val, priority) {
+    this.val = val
+    this.priority = priority
+  }
+}
+
 class PriorityQueue {
   constructor() {
     this.values = []
@@ -9,7 +16,7 @@ class PriorityQueue {
     let workingNode = this.values[idx]
     let parentNode = this.values[parentIdx]
 
-    while (workingNode > parentNode) {
+    while (workingNode.priority < parentNode.priority) {
       this.values[parentIdx] = workingNode
       this.values[idx] = parentNode
       idx = parentIdx
@@ -34,9 +41,9 @@ class PriorityQueue {
     let rightIdx = workingIdx * 2 + 2
     let temp
 
-    while (this.values[workingIdx] < this.values[leftIdx] || this.values[workingIdx] < this.values[rightIdx]) {
+    while (this.values[workingIdx] > this.values[leftIdx] || this.values[workingIdx] > this.values[rightIdx]) {
       temp = this.values[workingIdx]
-      if (this.values[leftIdx] > this.values[rightIdx]) {
+      if (this.values[leftIdx] < this.values[rightIdx]) {
         this.values[workingIdx] = this.values[leftIdx]
         this.values[leftIdx] = temp
         workingIdx = leftIdx
