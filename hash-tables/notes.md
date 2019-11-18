@@ -18,3 +18,10 @@ Example:
 Imagine we wanted to store colors. We could use array/list.
 It would be nice to use names instead of hex numbers for readability.
 colors['cyan'] is better than colors[2]
+
+Hashes need to be human AND computer readable.
+
+The HASH part
+- we will use an array
+- we need a way to convert keys into valid array indices
+- the function that helps you do that is a hash function
