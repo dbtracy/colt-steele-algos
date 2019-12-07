@@ -35,12 +35,13 @@ class HashTable {
     for (let i = 0; i < Math.min(key.length, 100); i++) {
       let char = key[i]
       let value = char.charCodeAt(0) - 96
-      total = (total * WEIRD_PRIME + value) % this.size
+      total = (total * WEIRD_PRIME + value) % this.keyMap.length
     }
     return total
   }
   set(key, value) {
     let hashed = this._hash(key)
+    // console.log(`keymap at index:${hashed}`, this.keyMap[hashed])
     if (!this.keyMap[hashed]) {
       this.keyMap[hashed] = [[key, value]]
     } else {
@@ -61,10 +62,10 @@ class HashTable {
   keys() {
     let result = []
     for (let i = 0; i < this.keyMap.length; i++) {
-      console.log(this.keyMap[i])
-      // if (spot) {
-      //   result.push(spot[0])
-      // }
+      // console.log(this.keyMap[i])
+      if (this.keyMap[i]) {
+        result.push(this.keyMap[i][0][0])
+      }
     }
     return result
   }
@@ -86,6 +87,13 @@ let ht = new HashTable(17)
 ht.set('purple', '#808080')
 ht.set('red', '#818181')
 ht.set('green', '#949596')
+ht.set('plum', '#149596')
+ht.set('salmon', '#249596')
+ht.set('yellow', '#349596')
+ht.set('maroon', '#449596')
+ht.set('black', '#549596')
+ht.set('white', '#649596')
 
 // console.log(ht.get('green'))
-console.log(ht.values())
+// console.log('KEYMAP:', ht.keyMap)
+console.log(ht.keys())
