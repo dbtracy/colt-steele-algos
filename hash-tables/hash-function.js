@@ -1,13 +1,13 @@
 /* initial hash */
 
-function hash() {
-  let total = 0
-  for (let char of key) {
-    let value = char.charCodeAt(0) - 96
-    total = (total + value) % arrayLen
-  }
-  return total
-}
+// function hash() {
+//   let total = 0
+//   for (let char of key) {
+//     let value = char.charCodeAt(0) - 96
+//     total = (total + value) % arrayLen
+//   }
+//   return total
+// }
 
 /* refining hash */
 
@@ -35,7 +35,7 @@ class HashTable {
     for (let i = 0; i < Math.min(key.length, 100); i++) {
       let char = key[i]
       let value = char.charCodeAt(0) - 96
-      total = (total * WEIRD_PRIME + value) % arrayLen
+      total = (total * WEIRD_PRIME + value) % this.size
     }
     return total
   }
@@ -58,4 +58,34 @@ class HashTable {
     }
     return undefined
   }
+  keys() {
+    let result = []
+    for (let i = 0; i < this.keyMap.length; i++) {
+      console.log(this.keyMap[i])
+      // if (spot) {
+      //   result.push(spot[0])
+      // }
+    }
+    return result
+  }
+  values() {
+    let result = []
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          result.push(this.keyMap[i][j][1])
+        }
+      }
+    }
+    return result
+  }
 }
+
+let ht = new HashTable(17)
+
+ht.set('purple', '#808080')
+ht.set('red', '#818181')
+ht.set('green', '#949596')
+
+// console.log(ht.get('green'))
+console.log(ht.values())
