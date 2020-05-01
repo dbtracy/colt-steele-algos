@@ -60,7 +60,7 @@ class WeightedGraph {
         for (let neighbor in this.adjacencyList[smallest]) {
           // find neighboring node
           let nextNode = this.adjacencyList[smallest][neighbor]
-
+          console.log('NEXTNODE:', nextNode)6
           // calculate distance to neighboring node
           let candidate = distances[smallest] + nextNode.weight
           let nextNeighbor = nextNode.node
@@ -74,6 +74,10 @@ class WeightedGraph {
           }
         }
       }
+      console.log('SMALLEST:', smallest)
+      console.log('NODES:', nodes.values)
+      console.log('DISTANCES:', distances)
+      console.log('PREVIOUS:', previous)
     }
     return path.concat(smallest).reverse()
   }
