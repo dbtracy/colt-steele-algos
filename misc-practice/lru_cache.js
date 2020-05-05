@@ -33,16 +33,21 @@ class DoublyLinkedList {
       this.length = 0;
     } else {
       this.tail = this.tail.prev;
-      this.tail.next = null;
       this.tail.next.prev = null;
+      this.tail.next = null;
       this.length--;
     }
   }
   remove(node) { // cut node pointers
-    if (!node.next) node.next.prev = node.prev;
+
+    // is the node the tail?
+    if (node.next) node.next.prev = node.prev;
     else this.tail = node.prev;
-    if (!node.prev) node.prev.next = node.next;
+
+    // is the node the head?
+    if (node.prev) node.prev.next = node.next;
     else this.head = node.next;
+
     node.prev = null;
     node.next = null;
     this.length--;
@@ -63,10 +68,10 @@ class LRUCache {
     return this.cache[key].val
   }
   put(key, value) {
-    if (this.cache[key]) {
+    if (this.cache[key]) { // if key is already in the cache
       this.recently.remove(this.cache[key])
       this.cache[key] = this.recently.unshift(key, value)
-    } else {
+    } else { // if key is not in the cache
       if (this.recently.length < this.capacity) {
         this.cache[key] = this.recently.unshift(key, value)
       } else {
