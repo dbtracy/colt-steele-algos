@@ -58,3 +58,14 @@ LRU CACHE CLASS
       -delete cache[DLL.tail.key]
       -DLL.pop()
       -set cache[key] to unshift(key val)
+
+
+
+
+WHERE WERE MY STICKING POINTS
+- forgot nodes should takes keys as well as values
+- i popped node off list before deleting key from cache
+- i deleted working node instead of the tail
+- unnecessarily verbose remove method
+  - just check if they're head or tail (look at prevs/nexts)
+  - then remove their pointers and return
